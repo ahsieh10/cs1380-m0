@@ -3,7 +3,7 @@
 # The details of the index structure can be seen in the test cases
 
 
-while read line; do
+while read -r line; do
     delimiter="|"
 
     IFS="$delimiter" read -ra strings <<< "$line"
