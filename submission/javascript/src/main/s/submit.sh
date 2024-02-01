@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
+<<<<<<< HEAD
 
 cd "$(dirname "$0")/.." || exit
+=======
+cd "$(dirname "$0")/.." || exit 1
+>>>>>>> parent of 33bde97 (made lint fixes)
 
 
 log() 
@@ -19,7 +23,11 @@ log()
 # Check if we are in a git repository
 git ls-files > /dev/null || exit 1
 
+<<<<<<< HEAD
 cd "$(dirname "$0")/.." || exit
+=======
+cd "$(dirname "$0")/.." || exit 1
+>>>>>>> parent of 33bde97 (made lint fixes)
 
 SUBMISSION_FOLDER="submission"
 ROOT_FOLDER=javascript
@@ -39,7 +47,11 @@ do
 done
 
 # Ask the user if they want to overwrite the submission.zip file
+<<<<<<< HEAD
 [[ -f submission.zip ]] && log "overwrite submission.zip? (y/n) " -n && read -n 1 -r && echo
+=======
+[[ -f submission.zip ]] && log "overwrite submission.zip? (y/n) " -n & read -n 1 -r && echo
+>>>>>>> parent of 33bde97 (made lint fixes)
 [[ $REPLY =~ ^[Yy]$ ]] && rm submission.zip
 [[ $REPLY =~ ^[Nn]$ ]] && exit 1
 

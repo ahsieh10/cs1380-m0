@@ -6,7 +6,10 @@ R_FOLDER=${R_FOLDER:-}
 cd "$(dirname "$0")/..$R_FOLDER" || exit 1
 
 DIFF=${DIFF:-diff}
+<<<<<<< HEAD
 DIFF_PERCENT=${DIFF_PERCENT:-0}
+=======
+>>>>>>> parent of 33bde97 (made lint fixes)
 
 cat /dev/null > d/visited.txt
 cat /dev/null > d/global-index.txt
@@ -22,7 +25,11 @@ else
     echo "$0 failure: visited urls are not identical"
 fi
 
+<<<<<<< HEAD
 if DIFF_PERCENT=$DIFF_PERCENT t/gi-diff.js <(sort d/global-index.txt) <(sort "$T_FOLDER"/d/i.txt) > /dev/null;
+=======
+if $DIFF <(sort d/global-index.txt) <(sort "$T_FOLDER"/d/i.txt) > /dev/null;
+>>>>>>> parent of 33bde97 (made lint fixes)
 then
     echo "$0 success: global-index is identical"
 else

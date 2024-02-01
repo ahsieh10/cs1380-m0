@@ -6,7 +6,10 @@ R_FOLDER=${R_FOLDER:-}
 cd "$(dirname "$0")/..$R_FOLDER" || exit 1
 
 DIFF=${DIFF:-diff}
+<<<<<<< HEAD
 DIFF_PERCENT=${DIFF_PERCENT:-0}
+=======
+>>>>>>> parent of 33bde97 (made lint fixes)
 
 cat /dev/null > d/global-index.txt
 
@@ -18,7 +21,11 @@ do
     mv d/temp-global-index.txt d/global-index.txt
 done
 
+<<<<<<< HEAD
 if DIFF_PERCENT=$DIFF_PERCENT t/gi-diff.js <(sort d/global-index.txt) <(sort "$T_FOLDER"/d/m4.txt) > /dev/null;
+=======
+if $DIFF <(cat d/global-index.txt) <(cat "$T_FOLDER"/d/m4.txt) > /dev/null;
+>>>>>>> parent of 33bde97 (made lint fixes)
 then
     echo "$0 success: global indexes are identical"
 else
