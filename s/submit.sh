@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")/.." || exit 1
+
+cd "$(dirname "$0")/.." || exit
 
 
 log() 
@@ -18,7 +19,7 @@ log()
 # Check if we are in a git repository
 git ls-files > /dev/null || exit 1
 
-cd "$(dirname "$0")/.." || exit 1
+cd "$(dirname "$0")/.." || exit
 
 SUBMISSION_FOLDER="submission"
 ROOT_FOLDER=javascript
@@ -38,7 +39,7 @@ do
 done
 
 # Ask the user if they want to overwrite the submission.zip file
-[[ -f submission.zip ]] && log "overwrite submission.zip? (y/n) " -n & read -n 1 -r && echo
+[[ -f submission.zip ]] && log "overwrite submission.zip? (y/n) " -n && read -n 1 -r && echo
 [[ $REPLY =~ ^[Yy]$ ]] && rm submission.zip
 [[ $REPLY =~ ^[Nn]$ ]] && exit 1
 

@@ -12,4 +12,4 @@ while read line; do
     count="${strings[0]}"
 
     echo "$gram" "|" "$count" "|" "$1"
-done < <(cat | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | sort | uniq -c | cut -d " " -f 4-5 | sed "s/ /|/g" | sed "s/\t/ /g")
+done < <(cat | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | sort | uniq -c | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' | sed "s/ / | /g" | sed "s/\t/ / g")

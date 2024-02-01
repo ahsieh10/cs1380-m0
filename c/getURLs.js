@@ -6,7 +6,7 @@ const { URL } = require('url');
 
 // Example usage:
 var baseURL = process.argv[2];
-if (baseURL.slice(-5) == ".html"){
+if (baseURL.lastIndexOf('/') != baseURL.length - 1 && baseURL.substring(baseURL.lastIndexOf('/') + 1, baseURL.length).includes(".")){
   baseURL = baseURL.substring(0, baseURL.lastIndexOf('/'))
 }
 baseURL += "/"
